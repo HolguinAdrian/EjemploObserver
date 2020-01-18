@@ -1,20 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8CA3F8F6-77F9-436F-960D-AA74E677FA34}</ProjectGuid>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{8BF65FBE-D377-4777-A337-67DC9B8393B9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>EjemploObserver</RootNamespace>
-    <AssemblyName>EjemploObserver</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <AssemblyName>ConsoleApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,40 +18,97 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>EjemploObserver</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="SujetoObservado\IObservadoContenedorCodigo.cs" />
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include=".git\config" />
+    <None Include=".git\description" />
+    <None Include=".git\HEAD" />
+    <None Include=".git\hooks\applypatch-msg.sample" />
+    <None Include=".git\hooks\commit-msg.sample" />
+    <None Include=".git\hooks\fsmonitor-watchman.sample" />
+    <None Include=".git\hooks\post-update.sample" />
+    <None Include=".git\hooks\pre-applypatch.sample" />
+    <None Include=".git\hooks\pre-commit.sample" />
+    <None Include=".git\hooks\pre-push.sample" />
+    <None Include=".git\hooks\pre-rebase.sample" />
+    <None Include=".git\hooks\pre-receive.sample" />
+    <None Include=".git\hooks\prepare-commit-msg.sample" />
+    <None Include=".git\hooks\update.sample" />
+    <None Include=".git\index" />
+    <None Include=".git\info\exclude" />
+    <None Include=".git\logs\HEAD" />
+    <None Include=".git\logs\refs\heads\master" />
+    <None Include=".git\logs\refs\remotes\origin\HEAD" />
+    <None Include=".git\objects\08\ee451ff86157afda04c4853c9d982323235043" />
+    <None Include=".git\objects\14\07b531c5104e5fd2e5ec8e36cddb9dd1baf864" />
+    <None Include=".git\objects\17\721656d64568222c841602a3f9549c1a143c91" />
+    <None Include=".git\objects\1e\237c21586643d8da8dc468fe0f012221ed6de7" />
+    <None Include=".git\objects\20\af60fc0b529f1c3c1cd3b8e9dbb49aebdc2d33" />
+    <None Include=".git\objects\30\d2cd9036f6c2fe1eda69e9df14a28fab3ee9e5" />
+    <None Include=".git\objects\37\e97f6469d7eb08af699378dfe4f4b4b52bed05" />
+    <None Include=".git\objects\42\6c3fda8aeda703adaac4d10e8e5fed8764f95a" />
+    <None Include=".git\objects\49\2f56d1f0523b305e0cc6635a968bdc2b0889b0" />
+    <None Include=".git\objects\56\efbc7b5f15b5166cc89dae0406895b57de0b67" />
+    <None Include=".git\objects\71\09c3e5f3103ce85cc0b575df483e8a16f69778" />
+    <None Include=".git\objects\7a\701fb3a88efecddbff795455f60b6fa776014e" />
+    <None Include=".git\objects\9c\36d3aff0975dc7e73eace503d3bf8988bed39e" />
+    <None Include=".git\objects\bb\851547ac1e1f50ee36ce33b15c4b16386fdb07" />
+    <None Include=".git\objects\dc\c7c6944db5d96d322b308d073d52a381ae332d" />
+    <None Include=".git\objects\df\e0770424b2a19faf507a501ebfc23be8f54e7b" />
+    <None Include=".git\objects\e6\45270662b498b4b3c588444b1aceaae6e7d523" />
+    <None Include=".git\objects\ee\b92efdb84d623cc0cfdb6a130825cb5869e36e" />
+    <None Include=".git\objects\f9\175218349745466a4c7f016aa8480ed8187e9d" />
+    <None Include=".git\packed-refs" />
+    <None Include=".git\refs\heads\master" />
+    <None Include=".git\refs\remotes\origin\HEAD" />
+    <None Include=".vs\EjemploObserver\v16\.suo" />
+    <None Include=".vs\slnx.sqlite" />
+    <None Include=".vs\VSWorkspaceState.json" />
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Observadores\IObservadorPublicador.cs" />
-    <Compile Include="SujetoObservado\ObservadoContenedorCodigo.cs" />
     <Compile Include="Observadores\ObservadorCompilador.cs" />
     <Compile Include="Observadores\ObservadorEjecutadorPU.cs" />
     <Compile Include="Observadores\ObservadorEviadorMail.cs" />
     <Compile Include="Observadores\ObservadorInstalador.cs" />
-    <Compile Include="Observadores\ObservadorPublicador.cs" />
+    <Compile Include="Observadores\ObservadorUploader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SujetoObservado\AdministradorObservadores.cs" />
+    <Compile Include="SujetoObservado\ObservadoContenedorCodigo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <Folder Include=".git\objects\info\" />
+    <Folder Include=".git\objects\pack\" />
+    <Folder Include=".git\refs\tags\" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <ProjectExtensions>
+    <VisualStudio AllowExistingFolder="true" />
+  </ProjectExtensions>
 </Project>

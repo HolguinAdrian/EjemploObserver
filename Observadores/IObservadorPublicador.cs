@@ -2,6 +2,6 @@
 {
     public interface IObservadorPublicador
     {
-        void actualizar(int estado);
+        void actualizar(string datos);
     }
 }

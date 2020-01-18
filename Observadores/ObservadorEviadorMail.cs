@@ -4,15 +4,16 @@ namespace EjemploObserver
 {
     public class ObservadorEviadorMail : IObservadorPublicador
     {
-        public void actualizar(int estado)
-        {
-            if (estado == 5)
-            {
-                string res = string.Empty;
-                res += "Enviando Email...\n";
+        private ObservadoContenedorCodigo observadoContenedorCodigo;
 
-                Console.WriteLine(res);
-            }
+        public ObservadorEviadorMail(ObservadoContenedorCodigo observadoContenedorCodigo)
+        {
+            this.observadoContenedorCodigo = observadoContenedorCodigo;
+        }
+
+        public void actualizar(string datos)
+        {
+            Console.WriteLine($"Se reciben los datos: {datos}, se envía Email");
         }
     }
 }

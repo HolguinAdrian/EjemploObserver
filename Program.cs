@@ -10,19 +10,18 @@ namespace EjemploObserver
     {
         static void Main(string[] args)
         {
-            IObservadorPublicador publicadorCodigo = new ObservadorPublicador();
-            IObservadorPublicador observadorcompilador = new ObservadorCompilador();
-            IObservadorPublicador observadorEjecutador = new ObservadorEjecutadorPU();
-            IObservadorPublicador observadorActualizador = new ObservadorInstalador();
-            IObservadorPublicador enviadorMail = new ObservadorEviadorMail();
-
             ObservadoContenedorCodigo observadoContenedorCodigo = new ObservadoContenedorCodigo();
 
-            observadoContenedorCodigo.AgregarObservador(publicadorCodigo);
-            observadoContenedorCodigo.AgregarObservador(observadorcompilador);
-            observadoContenedorCodigo.AgregarObservador(observadorEjecutador);
-            observadoContenedorCodigo.AgregarObservador(observadorActualizador);
-            observadoContenedorCodigo.AgregarObservador(enviadorMail);
+            IObservadorPublicador publicadorCodigo = new ObservadorUploader(observadoContenedorCodigo);
+            IObservadorPublicador observadorcompilador = new ObservadorCompilador(observadoContenedorCodigo);
+            IObservadorPublicador observadorEjecutador = new ObservadorEjecutadorPU(observadoContenedorCodigo);
+            IObservadorPublicador observadorActualizador = new ObservadorInstalador(observadoContenedorCodigo);
+            IObservadorPublicador enviadorMail = new ObservadorEviadorMail(observadoContenedorCodigo);
+
+            observadoContenedorCodigo.administradorObservadores.AgregarObservador(publicadorCodigo);
+            observadoContenedorCodigo.administradorObservadores.AgregarObservador(observadorcompilador);
+            observadoContenedorCodigo.administradorObservadores.AgregarObservador(observadorEjecutador);
+            observadoContenedorCodigo.administradorObservadores.AgregarObservador(observadorActualizador);
 
             observadoContenedorCodigo.PublicarCodigo("<code>...<\\code>", "Ejemplo de codigo de ejemplo.");
 

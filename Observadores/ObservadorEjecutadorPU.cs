@@ -4,15 +4,17 @@ namespace EjemploObserver
 {
     public class ObservadorEjecutadorPU : IObservadorPublicador
     {
-        public void actualizar(int estado)
-        {
-            if (estado == 3)
-            {
-                string res = string.Empty;
-                res += "Ejecutando PU...\n";
+        private ObservadoContenedorCodigo observadoContenedorCodigo;
 
-                Console.WriteLine(res);
-            }
+        public ObservadorEjecutadorPU(ObservadoContenedorCodigo observadoContenedorCodigo)
+        {
+            this.observadoContenedorCodigo = observadoContenedorCodigo;
+        }
+
+        public void actualizar(string datos)
+        {
+            Console.WriteLine($"Se reciben los datos: {datos}, se Actualizará a la última versión");
+            observadoContenedorCodigo.ActualizarCodigo();
         }
     }
 }
