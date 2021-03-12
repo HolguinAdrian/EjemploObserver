@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace EjemploObserver
-{
+{     
     public class ObservadorEjecutadorPU : IObservadorPublicador
     {
         private ObservadoContenedorCodigo observadoContenedorCodigo;
